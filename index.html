@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>北疆11日游 · 地理位置交互路线图</title>
+  <!-- 高德地图 JS API（需配合安全密钥） -->
+  <script>
+    window._AMapSecurityConfig = { securityJsCode: '7db5f8f27e4ba6a16aa3ef8d8b717c45' };
+  </script>
+  <script src="https://webapi.amap.com/maps?v=2.0&key=4cb8110e4c1830734abb110cfe2ec57c"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 侧栏 -->
+    <aside id="panel">
+      <header>
+        <span class="tag">贵宾【瞌睡涵】 · 2人 · 含早</span>
+        <h1>北疆定制 11 日游路线</h1>
+        <p>按地理位置串联各天行程，点击侧栏或地图标记查看当日详情。</p>
+      </header>
+      <div id="controls">
+        <button id="play">▶ 播放路线</button>
+        <button id="navBtn">上一站</button>
+        <button id="navBtn2">下一站</button>
+        <button id="reset">重置</button>
+      </div>
+      <div id="score">
+        <span>总里程约 <b>3104 公里</b> · 11 天</span>
+        <span id="nowDay">—</span>
+      </div>
+      <div id="detail"></div>
+      <div id="daylist"></div>
+      <div id="footer">
+        数据来源：贵宾【瞌睡涵】2人北疆定制11日游玩路线报价单 · 里程为行程估算<br />
+        图为各站点地理位置示意，坐标按主流地图近似标注。
+      </div>
+    </aside>
+
+    <!-- 地图 -->
+    <div id="mapwrap">
+      <div id="map"></div>
+      <div id="loading">
+        <div>⏳ 地图加载中…</div>
+        <div class="err" id="loaderr"></div>
+      </div>
+      <div id="tooltip"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# 依赖与构建产物（由 npm install / npm run build 产生，不入库）
+node_modules/
+dist/
+
+# 本地环境与临时
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.vscode/
+.idea/
