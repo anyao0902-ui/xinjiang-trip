@@ -87,6 +87,16 @@ button:focus-visible { outline:2px solid var(--green-lt); outline-offset:2px; }
 #tooltip.show { display:block; }
 #tooltip b { color:var(--green-lt); }
 
+/* ---------- 地图右上角：标准/卫星切换 ---------- */
+.map-ctrl {
+  position:absolute; top:14px; right:14px; z-index:800;
+  padding:9px 14px; background:var(--panel); color:#cfe3f2; border:1px solid var(--border);
+  border-radius:8px; font-size:12.5px; font-weight:600; cursor:pointer;
+  box-shadow:0 4px 14px rgba(0,0,0,.4); transition:background .15s,color .15s;
+}
+.map-ctrl:hover { background:#2b3d4d; }
+.map-ctrl.on { background:var(--green); color:#fff; border-color:var(--green); }
+
 .amap-info-content { padding:0 !important; }
 .amap-info-sharp { box-shadow:0 8px 30px rgba(0,0,0,.5) !important; }
 .amap-info { background:transparent !important; box-shadow:none !important; }

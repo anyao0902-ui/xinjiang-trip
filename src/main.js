@@ -93,6 +93,24 @@ function initMap() {
   routeLine = new AMap.Polyline({ path, strokeColor: '#1f8a5d', strokeWeight: 4, strokeOpacity: 0.9, lineJoin: 'round' });
   map.add(routeLine);
 
+  // 卫星 / 标准底图切换
+  const satelliteLayer = new AMap.TileLayer.Satellite();
+  const roadNetLayer = new AMap.TileLayer.RoadNet();
+  const satToggle = document.getElementById('satToggle');
+  let satOn = false;
+  satToggle.addEventListener('click', () => {
+    satOn = !satOn;
+    if (satOn) {
+      map.add([satelliteLayer, roadNetLayer]);
+      satToggle.textContent = '🗺 标准';
+      satToggle.classList.add('on');
+    } else {
+      map.remove([satelliteLayer, roadNetLayer]);
+      satToggle.textContent = '🛰 卫星';
+      satToggle.classList.remove('on');
+    }
+  });
+
   infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -34), closeWhenClickMap: true });
 
   ITINERARY.forEach((item, idx) => {
